@@ -1,102 +1,102 @@
 # Saulcy Road
 
-> **Note sur le projet**
-> Ce projet a été réalisé en groupe dans le cadre d'un projet universitaire en groupe. Je n'ai donc pas réalisé l'intégralité du travail présenté ici.
+> **Note on the project**
+> This project was carried out as a group university project. Therefore, I did not complete all the work presented here.
 >
-> Mes contributions principales sur ce projet ont été :
-> *   Contribution à la conception de la représentation des données.
-> *   Réalisation d'un état de l’art et étude du fonctionnement de Crossy Road.
-> *   Gestion de projet : planification sur Asana, rédaction de la fiche projet et des comptes-rendus de réunion.
-> *   Développement de la fonctionnalité "vestiaire" et du menu principal.
-> *   Réalisation de sprites.
+> My main contributions to this project were:
+> *   Contribution to the design of the data representation.
+> *   Realization of a state of the art and study of the functioning of Crossy Road.
+> *   Project management: planning on Asana, writing the project sheet and meeting reports.
+> *   Development of the "locker room" feature and the main menu.
+> *   Creation of sprites.
 
-## À propos du projet
+## About the project
 
-Saulcy Road est un jeu développé en C, inspiré du célèbre jeu "Crossy Road". L'objectif est de guider un personnage à travers un plateau de jeu rempli d'obstacles, en essayant d'aller le plus loin possible. Chaque pas en avant augmente le score, et le meilleur score est sauvegardé.
+Saulcy Road is a game developed in C, inspired by the famous game "Crossy Road". The objective is to guide a character through a game board filled with obstacles, trying to get as far as possible. Each step forward increases the score, and the best score is saved.
 
-![Screenshot du jeu Saulcy Road](screenshot.png)
+![Screenshot of the game Saulcy Road](screenshot.png)
 
-## Fonctionnalités
+## Features
 
-### Modes de jeu
+### Game Modes
 
-Le jeu propose plusieurs modes :
+The game offers several modes:
 
--   **Version Textuelle** : Une version simplifiée qui se joue directement dans le terminal. Le joueur contrôle le personnage avec les touches ZQSD ou les flèches.
--   **Version Graphique** : Une version 2D plus immersive avec une interface graphique réalisée à l'aide de la librairie SDL2.
--   **Mode IA** : Dans les deux versions, il est possible de laisser une intelligence artificielle jouer à votre place et tenter d'obtenir le meilleur score.
+-   **Text Version**: A simplified version that is played directly in the terminal. The player controls the character with the WASD keys or the arrows.
+-   **Graphical Version**: A more immersive 2D version with a graphical interface made using the SDL2 library.
+-   **AI Mode**: In both versions, it is possible to let an artificial intelligence play for you and try to get the best score.
 
-### Personnages et Obstacles
+### Characters and Obstacles
 
--   **Vestiaire** : Un menu permet de choisir l'apparence du personnage parmi plusieurs options : Poulet, Canard ou Crocodile.
--   **Plateau de jeu** : Le plateau est généré aléatoirement à chaque partie et est composé de différents types de bandes : route, rivière, prairie et rails de train.
--   **Obstacles** :
-    -   **Mortels** : Voitures, camions, trains et l'eau.
-    -   **Ralentisseurs** : Buissons et arbres qui entravent la progression.
+-   **Locker Room**: A menu allows you to choose the character's appearance from several options: Chicken, Duck or Crocodile.
+-   **Game Board**: The board is randomly generated for each game and is composed of different types of strips: road, river, meadow and train tracks.
+-   **Obstacles**:
+    -   **Lethal**: Cars, trucks, trains and water.
+    -   **Slowdowns**: Bushes and trees that hinder progress.
 
-## Explications Techniques
+## Technical Explanations
 
-### Langage et Librairies
+### Language and Libraries
 
--   **Langage** : Le projet est entièrement développé en **C**.
--   **Librairies** :
-    -   `SDL2`, `SDL2_image`, `SDL2_mixer` : Pour la version graphique, la gestion des sprites, des animations et de l'audio.
-    -   `ncurses` : Pour la gestion de l'affichage dans la version textuelle.
-    -   `CUnit` : Pour les tests unitaires.
+-   **Language**: The project is entirely developed in **C**.
+-   **Libraries**:
+    -   `SDL2`, `SDL2_image`, `SDL2_mixer`: For the graphical version, management of sprites, animations and audio.
+    -   `ncurses`: For display management in the text version.
+    -   `CUnit`: For unit tests.
 
-### Structure du code
+### Code Structure
 
-Le code est organisé de manière modulaire pour une meilleure clarté et maintenance :
+The code is organized in a modular way for better clarity and maintenance:
 
--   `partie.c` : Contient le noyau de la logique du jeu (déplacements, collisions, score).
--   `renderer.c` : Gère l'affichage de la version graphique (fenêtre, textures, menus).
--   **Structures de données** : Le jeu utilise des listes chaînées pour représenter les différents éléments du plateau (lignes, obstacles statiques et dynamiques).
--   **IA** : Un algorithme a été implémenté pour permettre à un joueur virtuel de trouver le chemin le plus sûr.
+-   `partie.c`: Contains the core of the game logic (movement, collisions, score).
+-   `renderer.c`: Manages the display of the graphical version (window, textures, menus).
+-   **Data Structures**: The game uses linked lists to represent the different elements of the board (lines, static and dynamic obstacles).
+-   **AI**: An algorithm has been implemented to allow a virtual player to find the safest path.
 
-## Comment exécuter le projet
+## How to run the project
 
-### Prérequis
+### Prerequisites
 
-Assurez-vous d'avoir les librairies suivantes installées sur votre système :
+Make sure you have the following libraries installed on your system:
 -   `SDL2`
 -   `SDL2_image`
 -   `SDL2_mixer`
 -   `CUnit`
 -   `ncurses`
 
-Sur macOS, vous pouvez les installer avec Homebrew :
+On macOS, you can install them with Homebrew:
 ```bash
 brew install sdl2 sdl2_image sdl2_mixer cunit
 ```
-Sur les distributions basées sur Debian (comme Ubuntu) :
+On Debian-based distributions (like Ubuntu):
 ```bash
 sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libcunit1-dev
 ```
 
-### Compilation et Exécution
+### Compilation and Execution
 
-Un `Makefile` est fourni pour simplifier la compilation et l'exécution du projet.
+A `Makefile` is provided to simplify the compilation and execution of the project.
 
-1.  **Compiler le jeu** :
+1.  **Compile the game**:
     ```bash
     make build
     ```
 
-2.  **Lancer le jeu** :
+2.  **Launch the game**:
     ```bash
     make run
     ```
-    ou
+    or
     ```bash
     ./app
     ```
 
-3.  **Compiler et lancer les tests unitaires** :
+3.  **Compile and run the unit tests**:
     ```bash
     make test
     ```
 
-4.  **Nettoyer les fichiers de compilation** :
+4.  **Clean up the compilation files**:
     ```bash
     make clean
     ```

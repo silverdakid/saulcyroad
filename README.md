@@ -1,7 +1,7 @@
 # Saulcy Road
 
 > **Note sur le projet**
-> Ce projet a été réalisé en groupe dans le cadre d'un projet universitaire. Je n'ai donc pas réalisé l'intégralité du travail présenté ici.
+> Ce projet a été réalisé en groupe dans le cadre d'un projet universitaire en groupe. Je n'ai donc pas réalisé l'intégralité du travail présenté ici.
 >
 > Mes contributions principales sur ce projet ont été :
 > *   Contribution à la conception de la représentation des données.
@@ -82,7 +82,7 @@ Un `Makefile` est fourni pour simplifier la compilation et l'exécution du proje
     make build
     ```
 
-2.  **Lancer le jeu** (lance la version graphique par défaut) :
+2.  **Lancer le jeu** :
     ```bash
     make run
     ```
